@@ -3,30 +3,25 @@ Find the largest palindrome made from the product of two 3-digit numbers.*/
 
 public class Palindrome {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-	    int value = 0;
-        for(int i = 100;i <=999;i++)
+	    int product = 0;
+        for(int i=100;i<=999;i++)
         {
-            for(int j = i;j <=999;j++)
+            for(int j=i;j<=999;j++)
             {
-                int value1 = i * j;
-                StringBuilder sb1 = new StringBuilder(""+value1);
-                String sb2 = ""+value1;
-                sb1.reverse();
-                if(sb2.equals(sb1.toString()) && value<value1) {
-                    value = value1;
-
+                int product1 = i * j;
+                String sb = String.valueOf(product1);
+                String sb1 = new StringBuilder(sb).reverse().toString();
+        
+                if(sb.equals(sb1) && product<product1){
+                	product=product1;
                 }
-
+               
             }
+         
         }
-
-        System.out.println(value);
-    }
-	
-
+        System.out.println(product);
+	}
 }
+
+	
